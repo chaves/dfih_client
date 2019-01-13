@@ -7,6 +7,7 @@
             v-model="pageEnCours"
             :length="pagination.last_page"
             :update="$emit('newPage', pageEnCours)"
+            :total-visible="12"
           ></v-pagination>
         </v-card-text>
       </v-card>

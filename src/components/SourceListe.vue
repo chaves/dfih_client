@@ -20,7 +20,13 @@
                     />
                   </div>
 
-                  <valid-source @validated="validated(id)" :source_id="source.id" :valide="true"/>
+                  <valid-source
+                    @validated="validated(id)"
+                    :source_id="source.id"
+                    :corporation="source.corporation"
+                    :infodate="source.infodate"
+                    :valide="true"
+                  />
 
                   <rules-table :regles="source.regles"/>
 

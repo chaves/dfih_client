@@ -2,12 +2,12 @@
   <v-layout row>
     <v-flex sm5>
       <v-card tile flat color="#dee8f9">
-        <v-card-text>Date : 31/12/1912</v-card-text>
+        <v-card-text>Date : {{infodate}}</v-card-text>
       </v-card>
     </v-flex>
     <v-flex sm5>
       <v-card tile flat color="#dee8f9">
-        <v-card-text color="#fff">Corporation : 1594</v-card-text>
+        <v-card-text color="#fff">Corporation : {{corporation}}</v-card-text>
       </v-card>
     </v-flex>
     <v-flex sm2>
@@ -44,7 +44,7 @@ export default {
       dialog: false
     };
   },
-  props: ["source_id", "valide"],
+  props: ["source_id", "corporation", "infodate", "valide"],
   methods: {
     validate: function() {
       window.axios
