@@ -69,8 +69,8 @@
           @open="open"
           @close="close"
         >
-          {{ props.item.ordre }}
-          <v-text-field slot="input" v-model="props.item.ordre" label="Edit" single-line counter></v-text-field>
+          {{ props.item.order_regle }}
+          <v-text-field slot="input" v-model="props.item.order_regle" label="Edit" single-line counter></v-text-field>
         </v-edit-dialog>
       </td>
 
