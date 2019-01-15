@@ -48,15 +48,18 @@ export default {
   methods: {
     validate: function() {
       window.axios
-        .post("validate/", { source_id: this.source_id })
-        .then((this.dialog = false))
+        .post("validate", { source_id: this.source_id })
+        .then(function(response) {
+          console.log(response);
+          this.dialog = false;
+        })
         .catch();
 
       this.$emit("validated", this.source_id);
     },
     un_validate: function() {
       window.axios
-        .post("un_validate/", { source_id: this.source_id })
+        .post("un_validate", { source_id: this.source_id })
         .then((this.dialog = false))
         .catch();
 
