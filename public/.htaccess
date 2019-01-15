@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "Interface DFIH"
-AuthUserFile ../.htpasswd
-Require valid-user

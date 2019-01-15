@@ -3,6 +3,7 @@ node_modules
 /dist
 
 .htpasswd
+.htaccess
 
 # local env files
 .env.local
