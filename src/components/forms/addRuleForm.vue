@@ -29,7 +29,7 @@
 
     <v-card>
       <v-card-text>
-        <highlight-source :source="source" :regles="regles"/>
+        <highlight-source :source="source" :regles="regles" :id="source_id"/>
       </v-card-text>
     </v-card>
   </div>

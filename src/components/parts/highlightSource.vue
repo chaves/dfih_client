@@ -7,12 +7,11 @@ export default {
   props: ["id", "source", "regles"],
   methods: {
     highlight: function(source, regles) {
-      const levels = { 1: "one", 2: "two", 3: "three" };
+      const levels = { 1: "one", 2: "two", 3: "three", 4: "four" };
       if (regles) {
         regles.map(function(value) {
           source = source.replace(
-            // new RegExp("(/d.*" + value.cible + ")", "i"),
-            new RegExp("(<?" + value.montant + ".*" + value.cible + ")", "i"),
+            new RegExp("(" + value.montant + "\\D*" + value.cible + ")", "i"),
             match => {
               return (
                 '<span class="level-' +
