@@ -66,14 +66,6 @@
                   />
 
                   <rules-table :regles="source.regles"/>
-
-                  <v-card>
-                    <v-card-text>
-                      <v-btn @click="addRegle = ! addRegle" small>
-                        <v-icon dark left>add</v-icon>Ajouter une règle
-                      </v-btn>
-                    </v-card-text>
-                  </v-card>
                 </v-expansion-panel-content>
               </v-expansion-panel>
             </v-tab-item>

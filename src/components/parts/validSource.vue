@@ -49,10 +49,7 @@ export default {
     validate: function() {
       window.axios
         .post("validate", { source_id: this.source_id })
-        .then(function(response) {
-          console.log(response);
-          this.dialog = false;
-        })
+        .then((this.dialog = false))
         .catch();
 
       this.$emit("validated", this.source_id);
