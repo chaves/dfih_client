@@ -1,12 +1,12 @@
 <template>
-  <span v-html="highlight(source, regles)"></span>
+  <span v-html="highlight(id, source, updated_at, regles)"></span>
 </template>
 
 <script>
 export default {
-  props: ["id", "source", "regles"],
+  props: ["id", "source", "updated_at", "regles"],
   methods: {
-    highlight: function(source, regles) {
+    highlight: function(id, source, updated_at, regles) {
       const levels = { 1: "one", 2: "two", 3: "three", 4: "four" };
       if (regles) {
         regles.map(function(value) {
@@ -24,7 +24,11 @@ export default {
           );
         });
       }
-      return "<strong>[" + this.id + "]</strong> " + source;
+      if (updated_at) {
+        return updated_at + " - <strong>[" + id + "]</strong> " + source;
+      } else {
+        return "<strong>[" + id + "]</strong> " + source;
+      }
     }
   }
 };
