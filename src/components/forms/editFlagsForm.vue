@@ -29,15 +29,19 @@
                 <v-text-field v-model="regle.max" label="Max"></v-text-field>
               </v-flex>
 
-              <v-flex xs4>
+              <v-flex xs3>
+                <v-switch :label="`Optionel`" v-model="regle.flag_optionel"></v-switch>
+              </v-flex>
+
+              <v-flex xs3>
                 <v-switch :label="`Cible multiple`" v-model="regle.flag_cible_multiple"></v-switch>
               </v-flex>
 
-              <v-flex xs4>
+              <v-flex xs3>
                 <v-switch :label="`Délégation`" v-model="regle.flag_delegation"></v-switch>
               </v-flex>
 
-              <v-flex xs4>
+              <v-flex xs3>
                 <v-switch :label="`Illisible`" v-model="regle.flag_illisible"></v-switch>
               </v-flex>
 
@@ -89,6 +93,9 @@ export default {
       }
       if (regle.max.length > 0) {
         this.flags.push("max:" + regle.max);
+      }
+      if (regle.flag_optionel) {
+        this.flags.push("optionel");
       }
       if (regle.flag_cible_multiple) {
         this.flags.push("cible_multiple");
