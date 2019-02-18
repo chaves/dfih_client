@@ -39,6 +39,7 @@
 import highlightSource from "../parts/highlightSource";
 export default {
   data: () => ({
+    id: null,
     niveau: null,
     ordre: null,
     montant: "",
@@ -66,11 +67,15 @@ export default {
         min: "",
         max: ""
       };
-      this.regles.push(formData);
+
+      let parent = this;
 
       window.axios
         .post("regles", formData)
-        .then()
+        .then(function(response) {
+          formData["id"] = response.data;
+          parent.regles.push(formData);
+        })
         .catch();
 
       this.niveau = null;
@@ -78,15 +83,6 @@ export default {
       this.montant = "";
       this.unite = "%";
       this.cible = "";
-    }
-  },
-  computed: {
-    // un accesseur (getter) calculé
-    current_order: function() {
-      return this.message
-        .split("")
-        .reverse()
-        .join("");
     }
   }
 };

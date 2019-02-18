@@ -16,7 +16,6 @@
                     <highlight-source
                       :id="source.id"
                       :source="source.texte"
-                      :updated_at="False"
                       :regles="source.regles"
                     />
                   </div>
