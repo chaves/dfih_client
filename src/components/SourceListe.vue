@@ -32,9 +32,18 @@
 
                   <v-card>
                     <v-card-text>
-                      <v-btn @click="addRegle = ! addRegle" small>
-                        <v-icon dark left>add</v-icon>Ajouter une règle
-                      </v-btn>
+                      <v-container grid-list-md>
+                        <v-layout row wrap>
+                          <v-flex xs2>
+                            <v-btn color="primary" @click="addRegle = ! addRegle" small>
+                              <v-icon dark left>add</v-icon>Ajouter une règle
+                            </v-btn>
+                          </v-flex>
+                          <v-flex xs10>
+                            <import-rules :regles="source.regles" :source_id="source.id"/>
+                          </v-flex>
+                        </v-layout>
+                      </v-container>
                     </v-card-text>
                   </v-card>
 
@@ -87,6 +96,7 @@ import rulesTable from "./parts/rulesTable";
 import validSource from "./parts/validSource";
 import paginationSources from "./parts/paginationSources";
 import addRule from "./forms/addRuleForm";
+import importRules from "./forms/importRulesForm";
 
 export default {
   data: () => ({
@@ -97,7 +107,8 @@ export default {
     page: 1,
     panel: [],
     hidden: [],
-    addRegle: false
+    addRegle: false,
+    importRules: false
   }),
 
   mounted() {
@@ -141,6 +152,7 @@ export default {
     "valid-source": validSource,
     "rules-table": rulesTable,
     "add-rule": addRule,
+    "import-rules": importRules,
     "pagination-sources": paginationSources
   }
 };

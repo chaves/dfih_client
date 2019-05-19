@@ -1,16 +1,30 @@
 <template>
   <v-layout row>
-    <v-flex sm5>
+    <v-flex xs3>
       <v-card tile flat color="#dee8f9">
-        <v-card-text>Date : {{infodate}}</v-card-text>
+        <v-card-text>
+          <strong>ID Source</strong>
+          : {{source_id}}
+        </v-card-text>
       </v-card>
     </v-flex>
-    <v-flex sm5>
+    <v-flex xs3>
       <v-card tile flat color="#dee8f9">
-        <v-card-text color="#fff">Corporation : {{corporation}}</v-card-text>
+        <v-card-text>
+          <strong>Date</strong>
+          : {{infodate}}
+        </v-card-text>
       </v-card>
     </v-flex>
-    <v-flex sm2>
+    <v-flex xs3>
+      <v-card tile flat color="#dee8f9">
+        <v-card-text color="#fff">
+          <strong>Corporation</strong>
+          : {{corporation}}
+        </v-card-text>
+      </v-card>
+    </v-flex>
+    <v-flex xs3>
       <v-card tile flat class="text-md-center">
         <v-btn v-if="valide" flat icon color="green" @click="dialog = true">
           <v-icon>done_all</v-icon>&nbsp;Valider
